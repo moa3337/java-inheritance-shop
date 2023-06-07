@@ -18,14 +18,14 @@ public class Prodotto {
         this.iva = iva;
     }
 
-    public Prodotto(int codice) {
-        this.codice = codice;
-    }
+    //public Prodotto(int codice) {
+        //this.codice = codice;
+    //}
 
     // Metodo privato per generare un codice casuale
     private int generaNuovoCodice() {
         Random random = new Random();
-        return random.nextInt(1000);
+        return (int) (Math.random() * 1000);
     }
 
     // Metodo getter per ottenere il codice del prodotto
@@ -80,4 +80,15 @@ public class Prodotto {
     public String getNomeIntero() {
         return codice + "-" + nome;
     }
+
+    @Override
+    public String toString() {
+        // // Trasformo "prodotto" in stringa
+        return "Codice: " + codice + "\n"
+                + "Nme: " + nome + "\n"
+                + "Descrizione: " + descrizione + "\n"
+                + "Prezzo: " + prezzo + "\n"
+                + "Iva: " + iva + "\n";
+    }
+
 }
